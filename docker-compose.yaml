@@ -1,0 +1,12 @@
+version: '3'
+services:
+    app:
+        build: .
+        command: app.py
+        env_file:
+            - vars.env
+        volumes: 
+            - "./sh:/sh"
+            - .:/app
+        ports:
+            - "5000:5000"
